@@ -28,25 +28,25 @@ const schema = {
   type: 'object',
   properties: {
     text: {
-      title: 'Text',
+      title: '水印内容',
       readOnly: false,
       required: false,
-      default: '仅用于办理住房公积金，他用无效。',
+      default: '水印文本',
       props: {
         allowClear: false,
       },
       type: 'string',
     },
     fillStyle: {
-      title: 'Color',
+      title: '颜色',
       readOnly: false,
       required: false,
       type: 'string',
       format: 'color',
-      default: '#00000080',
+      default: '#f0404080',
     },
     fontSize: {
-      title: 'Font Size (px)',
+      title: '字体大小 (px)',
       readOnly: false,
       required: false,
       type: 'number',
@@ -56,32 +56,32 @@ const schema = {
       max: 64,
     },
     rotate: {
-      title: 'Rotate (^)',
+      title: '旋转 (^)',
       readOnly: false,
       required: false,
       type: 'number',
       widget: 'slider',
-      default: 20,
+      default: 31,
       min: 0,
       max: 45,
     },
     watermarkWidth: {
-      title: 'Width (px)',
+      title: '宽度 (px)',
       readOnly: false,
       required: false,
       type: 'number',
       widget: 'slider',
-      default: 252,
+      default: 113,
       min: 100,
       max: 560,
     },
     watermarkHeight: {
-      title: 'Height (px)',
+      title: '高度 (px)',
       readOnly: false,
       required: false,
       type: 'number',
       widget: 'slider',
-      default: 180,
+      default: 151,
       min: 100,
       max: 360,
     },
@@ -138,7 +138,7 @@ export default function IndexPage() {
   const [{ options }, dispatch] = useReducer(reducer, initialState);
   const form = useForm();
 
-  const [scale, scaleAction] = useScaler(60);
+  const [scale, scaleAction] = useScaler(100);
 
   const { height: screenHeight = window.innerHeight } = useSize(document.body);
 
@@ -272,38 +272,10 @@ export default function IndexPage() {
       {/* Header */}
       <header className="fixed z-40 top-4 left-4 flex justify-start items-center content-center">
         <div className="pr-4 text-gray-800">
-          <div className="text-2xl font-bold font-sans z-50">WaterMark Pro</div>
+          <div className="text-2xl font-bold font-sans z-50">水印工具</div>
         </div>
-        <a href="https://github.com/Turkyden/watermark-pro" target="_blank">
-          <img
-            className="w-24"
-            alt="GitHub Repo stars"
-            src="https://img.shields.io/github/stars/Turkyden/watermark-pro?style=social"
-          />
-        </a>
       </header>
 
-      {/* Buy me a coofee */}
-      <div className="fixed top-20 left-4 z-40 cursor-pointer animate-bounce">
-        <Popover
-          content={
-            <div className="p-2">
-              <img
-                className="w-64 rounded"
-                src={require('../assets/weixin.jpeg')}
-                alt="buymeacoffee"
-              />
-            </div>
-          }
-          title=""
-        >
-          <img
-            className="w-36 shadow-2xl transition"
-            src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
-            alt="Buy Me A Coffee"
-          />
-        </Popover>
-      </div>
 
       {/* Canvas */}
       <section
@@ -322,7 +294,7 @@ export default function IndexPage() {
             <Watermark url={previewImage} options={options} />
           </div>
         </div>
-        <Control title="💦 WaterMark Pro" defaultPosition={{ x: -16, y: 16 }}>
+        <Control title="💦 水印工具" defaultPosition={{ x: -16, y: 16 }}>
           <FormRender
             form={form}
             schema={schema}
@@ -343,11 +315,11 @@ export default function IndexPage() {
             className="bg-gradient-to-r from-indigo-600 via-indigo-500 to-indigo-400"
             onClick={onExport}
           >
-            Export
+            下载
           </Button>
           <div className="py-1"></div>
           <Button block type="ghost" onClick={onExportAll}>
-            Export .zip
+            下载 .zip
           </Button>
         </Control>
         <Scaler scale={scale} {...scaleAction} />

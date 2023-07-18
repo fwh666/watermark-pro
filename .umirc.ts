@@ -2,12 +2,12 @@ import { defineConfig } from 'umi';
 
 export default defineConfig({
   title:
-    'Watermark Pro 最安全，最快速的纯前端图片加水印，拒绝上传保证个人信息安全。',
-  favicon: 'https://www.buymeacoffee.com/favicon.ico',
+    '水印工具 最安全，最快速的纯前端图片加水印，拒绝上传保证个人信息安全。',
+  favicon: 'https://img.fuwenhao.club/007.png',
   metas: [
     {
       name: 'keywords',
-      content: '水印生成工具, lowcode, 低代码',
+      content: '文浩, 水印生成工具, lowcode, 低代码',
     },
     {
       name: 'description',

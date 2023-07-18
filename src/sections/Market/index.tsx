@@ -371,38 +371,6 @@ export const Market: React.FC = () => {
               </div>
             </div>
           </div>
-          <a
-            href="https://github.com/Turkyden/watermark-pro"
-            target="_blank"
-            className="flex justify-center items-center w-32 text-center mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 focus:outline-none hover:bg-indigo-600 rounded-full text-lg"
-          >
-            <GithubOutlined />
-            <span className="pl-2">Resource</span>
-          </a>
-        </div>
-      </section>
-
-      <section className="w-full pb-32">
-        <h2 className="text-3xl text-center">参与贡献</h2>
-        <p className="text-center py-2">感谢以下开发者的积极贡献！</p>
-        <div className="text-center pt-4">
-          <img src="https://contrib.rocks/image?repo=Turkyden/watermark-pro" />
-        </div>
-      </section>
-
-      <section className="w-full pb-32">
-        <h2 className="text-3xl text-center">捐赠</h2>
-        <p className="text-center py-2">如果这个小工具对你有帮助</p>
-        <p className="text-center pb-10">
-          你也可以赞助作者 or 请他喝一杯 <span className="text-2xl">☕</span>{' '}
-          哦！
-        </p>
-        <div className="w-64 p-4 m-auto shadow-xl">
-          <img
-            className="w-full rounded"
-            src={require('../../assets/weixin.jpeg')}
-            alt="buymeacoffee"
-          />
         </div>
       </section>
 
@@ -411,15 +379,7 @@ export const Market: React.FC = () => {
           <div className="container mx-auto py-4 px-5 flex justify-center items-center">
             <p className="text-gray-500 text-sm text-center sm:text-center">
               <span className="pl-4">
-                MIT & Created with 💜 By
-                <a
-                  href="https://github.com/Turkyden"
-                  className="text-indigo-400 hover:text-indigo-500 ml-1 hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  @Turkyden
-                </a>
+              Copyright © 2023 - PRESENT 文浩 Built with Turkyden.
               </span>
             </p>
           </div>
