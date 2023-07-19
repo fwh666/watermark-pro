@@ -138,7 +138,7 @@ export default function IndexPage() {
   const [{ options }, dispatch] = useReducer(reducer, initialState);
   const form = useForm();
 
-  const [scale, scaleAction] = useScaler(100);
+  const [scale, scaleAction] = useScaler(70);
 
   const { height: screenHeight = window.innerHeight } = useSize(document.body);
 
@@ -275,7 +275,6 @@ export default function IndexPage() {
           <div className="text-2xl font-bold font-sans z-50">水印工具</div>
         </div>
       </header>
-
 
       {/* Canvas */}
       <section
